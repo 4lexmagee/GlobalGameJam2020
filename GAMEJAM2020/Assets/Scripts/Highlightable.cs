@@ -8,6 +8,10 @@ public class Highlightable : MonoBehaviour
     Sprite spriteOne;
 
     SpriteRenderer spRenderer;
+    public InteractionType interactionType;
+    public float carryDist;
+    public int partID;
+    public bool highlightable=true;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,4 +36,7 @@ public class Highlightable : MonoBehaviour
             spRenderer.sprite = spriteOne;
         }
     }
+
+    
 }
+public enum InteractionType { PickUp, Activate }
