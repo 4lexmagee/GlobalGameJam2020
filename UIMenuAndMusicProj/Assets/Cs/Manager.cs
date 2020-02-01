@@ -7,16 +7,16 @@ public class Manager : MonoBehaviour
 
     public bool LevelComplete;
 
-    //public AudioSource audioSource;
+    public AudioSource audioSource;
 
-    //public AudioClip MenuMusic;
-    //public AudioClip SettingsMusic;
-    //public AudioClip LevelMusic;
+    public AudioClip MenuMusic;
+    public AudioClip SettingsMusic;
+    public AudioClip LevelMusic;
 
     void Start()
     {
         DontDestroyOnLoad(transform.gameObject);
-        //DontDestroyOnLoad(audioSource);
+        DontDestroyOnLoad(audioSource);
     }
 
     void Update()
@@ -42,35 +42,35 @@ public class Manager : MonoBehaviour
 
         //audio
 
-        //if (a.name == "MainMenu")
-        //{
-        //    if (audioSource.clip.name != MenuMusic.name)
-        //    {
-        //        audioSource.clip = MenuMusic;
-        //        Debug.Log("Music change main menu");
-        //    }
+        if (a.name == "MainMenu")
+        {
+            if (audioSource.clip.name != MenuMusic.name)
+            {
+                audioSource.clip = MenuMusic;
+                Debug.Log("Music change main menu");
+            }
 
-        //}
+        }
 
-        //if (a.name == "SettingsMenu")
-        //{
-        //    if (audioSource.clip.name != SettingsMusic.name)
-        //    {
-        //        audioSource.clip = SettingsMusic;
-        //        Debug.Log("Music change settings menu");
-        //    }
+        if (a.name == "SettingsMenu")
+        {
+            if (audioSource.clip.name != SettingsMusic.name)
+            {
+                audioSource.clip = SettingsMusic;
+                Debug.Log("Music change settings menu");
+            }
 
-        //}
+        }
 
-        //if (a.name.ToLower().Contains("level"))
-        //{
-        //    if (audioSource.clip.name != LevelMusic.name)
-        //    {
-        //        audioSource.clip = LevelMusic;
-        //        Debug.Log("Music change level menu");
-        //    }
+        if (a.name.ToLower().Contains("level"))
+        {
+            if (audioSource.clip.name != LevelMusic.name)
+            {
+                audioSource.clip = LevelMusic;
+                Debug.Log("Music change level menu");
+            }
 
-        //}
+        }
 
     }
 
