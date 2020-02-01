@@ -6,7 +6,8 @@ public class TopDownController : MonoBehaviour
 {
     public float speed;
     public bool playerOne;
-    CharacterController controller;
+    [HideInInspector]
+    public CharacterController controller;
     [HideInInspector]
     public float currentDirectionX;
     [HideInInspector]
@@ -15,22 +16,22 @@ public class TopDownController : MonoBehaviour
     public bool movingUp;
     [HideInInspector]
     public bool movingDown;
+    [HideInInspector]
+     Vector2 targetVelocy;
     // Start is called before the first frame update
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        targetVelocy = Vector3.zero;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 targetVelocy = Vector2.zero;
+        targetVelocy = Vector2.zero;
         if (playerOne)
         {
             targetVelocy = new Vector3(Input.GetAxisRaw("HorizontalOne"), Input.GetAxisRaw("VerticalOne"));
-
-
-
         }
         else
         {
@@ -67,6 +68,7 @@ public class TopDownController : MonoBehaviour
         {
             movingUp = movingDown = false;
         }
+     
 
         controller.Move(targetVelocy);
     }
