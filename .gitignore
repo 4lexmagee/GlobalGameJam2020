@@ -10,6 +10,14 @@
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 
+/UIMenuAndMusicProj/[Ll]ibrary/
+/UIMenuAndMusicProj/[Tt]emp/
+/UIMenuAndMusicProj/[Oo]bj/
+/UIMenuAndMusicProj/[Bb]uild/
+/UIMenuAndMusicProj/[Bb]uilds/
+/UIMenuAndMusicProj/[Ll]ogs/
+/UIMenuAndMusicProj/[Mm]emoryCaptures/
+
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
 
