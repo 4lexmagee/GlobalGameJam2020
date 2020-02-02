@@ -5,6 +5,7 @@ using UnityEngine;
 public class WASD_Movement : MonoBehaviour
 {
     public float speed = 20f;
+    public GameObject hand;
     //public float speed = 1.5f;
 
     // Start is called before the first frame update
@@ -12,32 +13,6 @@ public class WASD_Movement : MonoBehaviour
     {
 
     }
-
-    // Update is called once per frame
-    //void Update()
-    //{
-    //    //Vector3 pos = transform.position;
-
-    //    //if (Input.GetKey("w"))
-    //    //{
-    //    //    Debug.Log("afsdfasdfd");
-    //    //    pos.z += speed;// * Time.deltaTime;
-    //    //}
-    //    //if (Input.GetKey("s"))
-    //    //{
-    //    //    pos.z -= speed * Time.deltaTime;
-    //    //}
-    //    //if (Input.GetKey("d"))
-    //    //{
-    //    //    pos.x += speed * Time.deltaTime;
-    //    //}
-    //    //if (Input.GetKey("a"))
-    //    //{
-    //    //    pos.x -= speed * Time.deltaTime;
-    //    //}
-
-
-    //}
 
 
     private void Update()
@@ -48,6 +23,8 @@ public class WASD_Movement : MonoBehaviour
         {
             //rb.AddForce(Vector3.left);
             rb.velocity = -transform.right * speed;
+
+
         }
         if (Input.GetKey(KeyCode.D))
         {

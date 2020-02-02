@@ -6,7 +6,6 @@ public class Collision_Pickup : MonoBehaviour
 {
 
     //V A R I A B L E S 
-    public GameObject obj;
     public GameObject wire_1;
     public GameObject wire_2;
     public Transform guide;
@@ -24,8 +23,10 @@ public class Collision_Pickup : MonoBehaviour
         
     }
 
+    //When object that script is on collides with declared tag, item(gameObject var) is moved to hand(guide)
     void OnTriggerEnter(Collider col)
     {
+        //First wire collision if
         if (col.transform.tag == "wire_1")
         {
             //We set the object parent to our guide empty object.
@@ -39,30 +40,22 @@ public class Collision_Pickup : MonoBehaviour
             //We re-position the wire on our guide object 
             wire_1.transform.position = guide.position;
         }
+
+        //Second wire collision if
+        if (col.transform.tag == "wire_2")
+        {
+            //We set the object parent to our guide empty object.
+            wire_2.transform.SetParent(guide);
+
+            //Set gravity to false while holding it
+            wire_2.GetComponent<Rigidbody>().useGravity = false;
+
+            //we apply the same rotation our main object (Camera) has.
+            wire_2.transform.localRotation = transform.rotation;
+            //We re-position the wire on our guide object 
+            wire_2.transform.position = guide.position;
+        }
         Debug.Log("Collided");
     }
 
-    //void OnTriggerEnter(Collider col)
-    //{
-    //    if (col.gameObject.tag == "hand")
-    //    {
-    //        obj = col.gameObject;
-
-
-    //        Destroy(wire_1);
-    //        //startcoroutine(examplecoroutine());
-
-    //        Debug.Log("wire 1 moved");
-    //    }
-
-
-    //    if (col.gameObject.tag == "hand")
-    //    {
-    //        obj = col.gameObject;
-    //        Destroy(wire_2);
-    //        //StartCoroutine(ExampleCoroutine());
-
-    //        Debug.Log("Wire 2 moved");
-    //    }
-    //}
 }
