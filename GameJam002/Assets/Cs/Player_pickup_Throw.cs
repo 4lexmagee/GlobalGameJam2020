@@ -6,7 +6,7 @@ public class Player_pickup_Throw : MonoBehaviour
 {
     public float speed = 10;
     public bool canHold = true;
-    public GameObject ball;
+    public GameObject wire;
     public Transform guide;
 
     void Update()
@@ -19,8 +19,8 @@ public class Player_pickup_Throw : MonoBehaviour
                 Pickup();
         }//mause If
 
-        if (!canHold && ball)
-            ball.transform.position = guide.position;
+        if (!canHold && wire)
+            wire.transform.position = guide.position;
 
     }//update
 
@@ -28,53 +28,53 @@ public class Player_pickup_Throw : MonoBehaviour
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "wire")
-            if (!ball) // if we don't have anything holding
-                ball = col.gameObject;
+            if (!wire) // if we don't have anything holding
+                wire = col.gameObject;
     }
 
     //We can use trigger or Collision
     void OnTriggerExit(Collider col)
     {
-        if (col.gameObject.tag == "ball")
+        if (col.gameObject.tag == "wire")
         {
             if (canHold)
-                ball = null;
+                wire = null;
         }
     }
 
 
     private void Pickup()
     {
-        if (!ball)
+        if (!wire)
             return;
 
         //We set the object parent to our guide empty object.
-        ball.transform.SetParent(guide);
+        wire.transform.SetParent(guide);
 
         //Set gravity to false while holding it
-        ball.GetComponent<Rigidbody>().useGravity = false;
+        wire.GetComponent<Rigidbody>().useGravity = false;
 
         //we apply the same rotation our main object (Camera) has.
-        ball.transform.localRotation = transform.rotation;
-        //We re-position the ball on our guide object 
-        ball.transform.position = guide.position;
+        wire.transform.localRotation = transform.rotation;
+        //We re-position the wire on our guide object 
+        wire.transform.position = guide.position;
 
         canHold = false;
     }
 
     private void throw_drop()
     {
-        if (!ball)
+        if (!wire)
             return;
 
         //Set our Gravity to true again.
-        ball.GetComponent<Rigidbody>().useGravity = true;
-        // we don't have anything to do with our ball field anymore
-        ball = null;
+        wire.GetComponent<Rigidbody>().useGravity = true;
+        // we don't have anything to do with our wire field anymore
+        wire = null;
         //Apply velocity on throwing
         guide.GetChild(0).gameObject.GetComponent<Rigidbody>().velocity = transform.forward * speed;
 
-        //Unparent our ball
+        //Unparent our wire
         guide.GetChild(0).parent = null;
         canHold = true;
     }

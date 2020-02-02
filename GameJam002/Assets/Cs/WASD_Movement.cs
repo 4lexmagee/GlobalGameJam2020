@@ -42,18 +42,28 @@ public class WASD_Movement : MonoBehaviour
 
     private void Update()
     {
+
         Rigidbody rb = GetComponent<Rigidbody>();
         if (Input.GetKey(KeyCode.A))
+        {
             //rb.AddForce(Vector3.left);
             rb.velocity = -transform.right * speed;
+        }
         if (Input.GetKey(KeyCode.D))
-            rb.velocity = transform.right * speed;
+        {
+            rb.velocity = transform.right * speed;    
+
+        }
         if (Input.GetKey(KeyCode.W))
+        {
             //rb.AddForce(Vector3.up);
             rb.velocity = new Vector3(0, 0, 1) * speed;
+        }
         if (Input.GetKey(KeyCode.S))
+        {
             //rb.AddForce(Vector3.down);
             rb.velocity = new Vector3(0, 0, -1) * speed;
+        }
 
     }
 

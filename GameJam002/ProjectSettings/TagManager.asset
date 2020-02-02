@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - wire
+  - breaker
+  - wire_1
+  - wire_2
+  - hand
   layers:
   - Default
   - TransparentFX
