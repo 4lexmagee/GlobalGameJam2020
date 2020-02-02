@@ -38,6 +38,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/New_Level_2_FIXED.unity
     guid: a1309b62d3b6daf41a0028d9926c1f76
+  - enabled: 1
+    path: Assets/Scenes/ENDGAME.unity
+    guid: 5cec8bd7a5043274b946a85a7cd81a49
   - enabled: 0
     path: Assets/Scenes/Obstacles_Layout.unity
     guid: 52ec864a053273e40beb36da7db8b78c

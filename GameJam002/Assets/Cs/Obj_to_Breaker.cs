@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Obj_to_Breaker : MonoBehaviour
 {
@@ -23,6 +24,11 @@ public class Obj_to_Breaker : MonoBehaviour
         {
             Destroy(door_1);
             Destroy(door_2);
+
+            //endgame script , after 2 seconds 
+            StartCoroutine(DelayStart());
+            
+
         }
         
     }
@@ -57,7 +63,11 @@ public class Obj_to_Breaker : MonoBehaviour
     }
 
 
-
+    IEnumerator DelayStart()
+    { //dalmationg screen :)
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene("ENDGAME");
+    }
 
 
 
