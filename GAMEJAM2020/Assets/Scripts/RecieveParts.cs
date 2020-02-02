@@ -11,6 +11,20 @@ public class RecieveParts : MonoBehaviour
     private void Start()
     {
         TryGetComponent(out highlight);
+        if(repaired)
+        {
+            SetRepaired();
+        }
+
+        int length = partIDNeeded.Count;
+        for (int i = 0; i < length; i++)
+        {
+            if(partIDNeeded[i].isRepaired)
+            {
+                RecivePart(partIDNeeded[i].partId);
+            }
+        }
+
     }
 
     public bool RecivePart(int id)
@@ -47,9 +61,19 @@ public class RecieveParts : MonoBehaviour
         return didRepair;
     }
 
+    public void SetRepaired()
+    {
+        int length = partIDNeeded.Count;
 
-
-   
+        for (int i = 0; i < length; i++)
+        {
+            RepairDetails details = partIDNeeded[i];
+            details.isRepaired = true;
+            details.part.Repaired(true);
+            partIDNeeded[i] = details;
+        }
+        repaired = true;
+        }
 }
 [Serializable]
 public struct RepairDetails

@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Highlightable : MonoBehaviour
 {
-    public Sprite spriteTwo;
-    Sprite spriteOne;
-
-    SpriteRenderer spRenderer;
+   // public Sprite spriteTwo;
+    //Sprite spriteOne;
+    public Light highlightGlow;
+    public float lightRadius = 5;
+    //SpriteRenderer spRenderer;
     public InteractionType interactionType;
     public float carryDist;
     public int partID;
@@ -15,8 +17,10 @@ public class Highlightable : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spRenderer = GetComponent<SpriteRenderer>();
-        spriteOne = spRenderer.sprite;
+        highlightGlow.range = lightRadius;
+        highlightGlow.enabled = false;
+        //spRenderer = GetComponent<SpriteRenderer>();
+        //spriteOne = spRenderer.sprite;
     }
 
     // Update is called once per frame
@@ -29,11 +33,13 @@ public class Highlightable : MonoBehaviour
     {
         if(currentlySelected)
         {
-            spRenderer.sprite = spriteTwo;
+            //spRenderer.sprite = spriteTwo;
+            highlightGlow.enabled = true;
         }
         else
         {
-            spRenderer.sprite = spriteOne;
+            highlightGlow.enabled = false;
+            //spRenderer.sprite = spriteOne;
         }
     }
 

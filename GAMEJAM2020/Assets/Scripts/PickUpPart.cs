@@ -77,14 +77,14 @@ public class PickUpPart : MonoBehaviour
                 
                 if (holdingObj)
                 {
-                    ReorientSelectBox(new Vector3(.5f + heldObjHighlight.carryDist, 0, 0));
+                    ReorientSelectBox(new Vector3(.75f + heldObjHighlight.carryDist, 0, 0));
                     handsTransform.localPosition = new Vector3(.5f + heldObjHighlight.carryDist, 0, 0);
                     controller.controller.center = new Vector3(.5f+heldObjHighlight.carryDist,0,0);
                     heldObj.transform.localPosition = handsTransform.localPosition;
                 }
                 else
                 {
-                    ReorientSelectBox(new Vector3(.5f, 0, 0));
+                    ReorientSelectBox(new Vector3(.75f, 0, 0));
                     handsTransform.localPosition = new Vector3(.5f, 0, 0);
                 }
               
@@ -95,14 +95,14 @@ public class PickUpPart : MonoBehaviour
                 
                 if (holdingObj)
                 {
-                    ReorientSelectBox(new Vector3(-.5f - heldObjHighlight.carryDist, 0, 0));
+                    ReorientSelectBox(new Vector3(-.75f - heldObjHighlight.carryDist, 0, 0));
                     handsTransform.localPosition = new Vector3(-.5f - heldObjHighlight.carryDist, 0, 0);
                     controller.controller.center = new Vector3(-.5f-heldObjHighlight.carryDist, 0, 0);
                     heldObj.transform.localPosition = handsTransform.localPosition;
                 }
                 else
                 {
-                    ReorientSelectBox(new Vector3(-.5f, 0, 0));
+                    ReorientSelectBox(new Vector3(-.75f, 0, 0));
                     handsTransform.localPosition = new Vector3(-.5f, 0, 0);
                 }
             }

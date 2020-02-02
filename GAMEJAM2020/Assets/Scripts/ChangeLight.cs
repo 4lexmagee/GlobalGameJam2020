@@ -13,6 +13,10 @@ public class ChangeLight : MonoBehaviour
     public Light rightLight;
     RecieveParts partsReciver;
     bool firstRepairedFlag;
+    public Sprite lightOn;
+    public Sprite lightOff;
+    public SpriteRenderer bulbRendLeft;
+    public SpriteRenderer bulbRendRight;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,17 +24,21 @@ public class ChangeLight : MonoBehaviour
         {
             leftOn = true;
             leftLight.gameObject.SetActive(true);
+            bulbRendLeft.sprite = lightOn;
 
             rightOn = false;
             rightLight.gameObject.SetActive(false);
+            bulbRendRight.sprite = lightOff;
         }
         else
         {
             leftOn = false;
             leftLight.gameObject.SetActive(false);
+            bulbRendLeft.sprite = lightOff;
 
             rightOn = true;
             rightLight.gameObject.SetActive(true);
+            bulbRendRight.sprite = lightOn;
         }
         TryGetComponent(out partsReciver);
         firstRepairedFlag = false;
@@ -50,9 +58,11 @@ public class ChangeLight : MonoBehaviour
             {
                 leftOn = true;
                 leftLight.gameObject.SetActive(true);
+                bulbRendLeft.sprite = lightOn;
 
                 rightOn = true;
                 rightLight.gameObject.SetActive(true);
+                bulbRendRight.sprite = lightOn;
                 firstRepairedFlag = true;
             }
         }
@@ -60,25 +70,31 @@ public class ChangeLight : MonoBehaviour
 
     public void SwitchLights(Vector3 position)
     {
-        bool _leftOn = (Vector3.Distance(position, leftLight.gameObject.transform.position) > Vector3.Distance(position, rightLight.gameObject.transform.position)) ? true : false;
+        
+        bool _leftOn = (Vector3.Distance(position, bulbRendLeft.gameObject.transform.position) > Vector3.Distance(position, bulbRendRight.gameObject.transform.position)) ? true : false;
         if (!firstRepairedFlag)
         {
             if (_leftOn)
             {
                 leftOn = true;
                 leftLight.gameObject.SetActive(true);
-
+                bulbRendLeft.sprite = lightOn;
 
                 rightOn = false;
                 rightLight.gameObject.SetActive(false);
-            }else
+                bulbRendRight.sprite = lightOff;
+            }
+            else
             {
 
                 leftOn = false;
                 leftLight.gameObject.SetActive(false);
+                bulbRendLeft.sprite = lightOff;
+
 
                 rightOn = true;
                 rightLight.gameObject.SetActive(true);
+                bulbRendRight.sprite = lightOn;
             }
         }
         else
@@ -88,10 +104,12 @@ public class ChangeLight : MonoBehaviour
                 if(leftLight.gameObject.activeSelf)
                 {
                     leftLight.gameObject.SetActive(false);
+                    bulbRendLeft.sprite = lightOff;
                 }
                 else
                 {
                     leftLight.gameObject.SetActive(true);
+                    bulbRendLeft.sprite = lightOn;
                 }
             }
             else
@@ -99,10 +117,12 @@ public class ChangeLight : MonoBehaviour
                 if (rightLight.gameObject.activeSelf)
                 {
                     rightLight.gameObject.SetActive(false);
+                    bulbRendRight.sprite = lightOff;
                 }
                 else
                 {
                     rightLight.gameObject.SetActive(true);
+                     bulbRendRight.sprite = lightOn;
                 }
             }
         }

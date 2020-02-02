@@ -50,11 +50,15 @@ public class PassPart : MonoBehaviour
             Vector3 newPos = Vector3.zero;
             if (leftToRight)
             {
-                 newPos = Vector3.Lerp(depositLeft.position, depositRight.position, percent);
+                Vector3 newDeposit = depositRight.position;
+                newDeposit.z = -3;
+                 newPos = Vector3.Lerp(depositLeft.position, newDeposit, percent);
             }
             else
             {
-                 newPos = Vector3.Lerp(depositRight.position, depositLeft.position, percent);
+                Vector3 newDeposit = depositLeft.position;
+                newDeposit.z = -3;
+                newPos = Vector3.Lerp(depositRight.position, newDeposit, percent);
             }
             transferObj.transform.position = newPos;
         }
