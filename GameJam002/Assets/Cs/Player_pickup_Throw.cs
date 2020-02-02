@@ -4,25 +4,55 @@ using UnityEngine;
 
 public class Player_pickup_Throw : MonoBehaviour
 {
-    public float speed = 10;
+    public float speed = 20;
     public bool canHold = true;
     public GameObject ball;
     public Transform guide;
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+
+        ////mousebtn to pickup, throw:
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    if (!canHold)
+        //        throw_drop();
+        //    else
+        //        Pickup();
+        //}
+
+        //if (!canHold && ball)
+        //{
+        //    ball.transform.position = guide.position;
+        //}
+
+        ////walk-over to pickup, E to throw:
+        if (Input.GetKey("e"))
         {
             if (!canHold)
+            { //if holding ball, throw or drop it
                 throw_drop();
-            else
-                Pickup();
-        }//mause If
+            }
+            //else
+            //{//needs to be out of this if stmt
+            //    
+            //}
+
+        }
+
+        if (canHold && ball)
+        {//handles picking up the object
+            Pickup();
+        }
 
         if (!canHold && ball)
+        { //this handles the object (after its being held) remaining in the 'hand'
             ball.transform.position = guide.position;
+        }
 
-    }//update
+
+
+    }
 
     //We can use trigger or Collision
     void OnTriggerEnter(Collider col)
