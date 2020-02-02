@@ -4,5 +4,56 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/Breaker_Boxes 1.unity
+    guid: 3013f102f7203754798e7f056e80c4c0
+  - enabled: 0
+    path: Assets/Scenes/Collision_Pickup 1.unity
+    guid: 3ce4a4dce3ae91a428a851636f7e23a1
+  - enabled: 0
+    path: Assets/Scenes/Doors_Open.unity
+    guid: d0ab2c5df33320a40b3beee3329dc30f
+  - enabled: 0
+    path: Assets/Scenes/Level_1.unity
+    guid: 48140c3b2cc42bc4f8c97a0db6af8f93
+  - enabled: 0
+    path: Assets/Scenes/Level_1TEST 1.unity
+    guid: 084bc2bbe4d2e7a4ba14f12f9e555b49
+  - enabled: 0
+    path: Assets/Scenes/Level_1TEST2.unity
+    guid: ec25f51e8201d244dbe8f4bc9dc2e613
+  - enabled: 0
+    path: Assets/Scenes/Level_2.unity
+    guid: 44abe789ebfb4504ea8eca3eab17c34f
+  - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: 61bf703988c6015409071c34601c9d65
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 2499d41ab0b9f1246b29d33124604853
+  - enabled: 0
+    path: Assets/Scenes/New_Level_1.unity
+    guid: a2506a7fa4a491d40b889bf02c36d058
+  - enabled: 1
+    path: Assets/Scenes/New_Level_2_FIXED.unity
+    guid: a1309b62d3b6daf41a0028d9926c1f76
+  - enabled: 0
+    path: Assets/Scenes/Obstacles_Layout.unity
+    guid: 52ec864a053273e40beb36da7db8b78c
+  - enabled: 0
+    path: Assets/Scenes/PassObj.unity
+    guid: 30332bcdae3196a4fbf43d96f17ceed9
+  - enabled: 0
+    path: Assets/Scenes/Pickup_Throw 1.unity
+    guid: b17abb2450d99c048b6902c9ac23bf05
+  - enabled: 0
+    path: Assets/Scenes/SettingsMenu.unity
+    guid: ed78789b739a6f444ac96a0fa8cda560
+  - enabled: 0
+    path: Assets/Scenes/Sprite.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 0
+    path: Assets/Scenes/Walls.unity
+    guid: 53ad0f2c94ae12a488fd1940ecb7c8ce
   m_configObjects: {}
