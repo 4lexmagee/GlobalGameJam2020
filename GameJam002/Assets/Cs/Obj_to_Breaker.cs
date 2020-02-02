@@ -38,8 +38,10 @@ public class Obj_to_Breaker : MonoBehaviour
         {
             obj = col.gameObject;
             Destroy(wire_1);
-            wire_1_Destroyed = true;
+            GameObject Wire_1 = GameObject.FindWithTag("wire_1");
+            Destroy(Wire_1);
             Debug.Log("wire 1 moved");
+            wire_1_Destroyed = true;
         }
 
 
@@ -47,8 +49,10 @@ public class Obj_to_Breaker : MonoBehaviour
         {
             obj = col.gameObject;
             Destroy(wire_2);
-            wire_2_Destroyed = true;
+            GameObject Wire_2 = GameObject.FindWithTag("wire_2");
+            Destroy(Wire_2);
             Debug.Log("Wire 2 moved");
+            wire_2_Destroyed = true;
         }
     }
 
