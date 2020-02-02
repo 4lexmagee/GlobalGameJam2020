@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_pickup_Throw : MonoBehaviour
 {
@@ -40,10 +41,10 @@ public class Player_pickup_Throw : MonoBehaviour
 
         }
 
-        if (canHold && ball)
-        {//handles picking up the object
-            Pickup();
-        }
+        //if (canHold && ball) //MOVED this to collision method
+        //{//handles picking up the object
+        //    Pickup();
+        //}
 
         if (!canHold && ball)
         { //this handles the object (after its being held) remaining in the 'hand'
@@ -57,14 +58,30 @@ public class Player_pickup_Throw : MonoBehaviour
     //We can use trigger or Collision
     void OnTriggerEnter(Collider col)
     {
+
+        Debug.Log("on trigger enter ");
+
         if (col.gameObject.tag == "wire")
-            if (!ball) // if we don't have anything holding
+            if (!ball) // if we don't have anything holding { 
+            {
                 ball = col.gameObject;
+            }
+            
+        if (canHold && ball)
+        {/////////////////handles picking up the object
+            if (Input.GetKey("e"))
+            {//dont pick it up unless E is pressed
+                Pickup();
+            }
+            
+        }
+
     }
 
     //We can use trigger or Collision
     void OnTriggerExit(Collider col)
     {
+        Debug.Log("on trigger exit ");
         if (col.gameObject.tag == "ball")
         {
             if (canHold)
@@ -76,7 +93,10 @@ public class Player_pickup_Throw : MonoBehaviour
     private void Pickup()
     {
         if (!ball)
+        {
             return;
+        }
+            
 
         //We set the object parent to our guide empty object.
         ball.transform.SetParent(guide);
