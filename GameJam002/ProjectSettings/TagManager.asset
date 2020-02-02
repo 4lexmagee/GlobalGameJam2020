@@ -9,6 +9,9 @@ TagManager:
   - wire_1
   - wire_2
   - hand
+  - PassObj
+  - LeftSpawnLoc
+  - RightSpawnLoc
   layers:
   - Default
   - TransparentFX

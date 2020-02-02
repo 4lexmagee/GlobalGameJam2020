@@ -6,6 +6,8 @@ public class WASD_Movement : MonoBehaviour
 {
     public float speed = 20f;
     public GameObject hand;
+
+
     //public float speed = 1.5f;
 
     // Start is called before the first frame update
