@@ -26,6 +26,10 @@ public class Obj_to_Breaker : MonoBehaviour
         }
         
     }
+    //wire_1 is blue
+    //wire_2 is red
+    //wire_3 is green
+    //wire_4 is yellow
 
     //takes wire_1 from player and destroys it when colliding with breaker box
     void OnTriggerEnter(Collider col)
