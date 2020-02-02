@@ -36,7 +36,7 @@ public class Collision_Pickup : MonoBehaviour
             wire_1.GetComponent<Rigidbody>().useGravity = false;
 
             //we apply the same rotation our main object (Camera) has.
-            wire_1.transform.localRotation = transform.rotation;
+           // wire_1.transform.localRotation = transform.rotation;
             //We re-position the wire on our guide object 
             wire_1.transform.position = guide.position;
         }
@@ -51,7 +51,7 @@ public class Collision_Pickup : MonoBehaviour
             wire_2.GetComponent<Rigidbody>().useGravity = false;
 
             //we apply the same rotation our main object (Camera) has.
-            wire_2.transform.localRotation = transform.rotation;
+          //  wire_2.transform.localRotation = transform.rotation;
             //We re-position the wire on our guide object 
             wire_2.transform.position = guide.position;
         }
