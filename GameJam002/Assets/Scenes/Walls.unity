@@ -775,12 +775,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &743563427 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 707245955863966095, guid: becf5bf0788073b43b6014f90f5da733,
-    type: 3}
-  m_PrefabInstance: {fileID: 1817128534}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1095,13 +1089,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1165978379}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0938bda5e7ddbb4e8b4d8c359f752ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 75f6adc004c4070448757f50c5feb493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  canHold: 1
-  ball: {fileID: 1186338583}
-  guide: {fileID: 743563427}
+  guide: {fileID: 0}
 --- !u!114 &1165978381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1255,12 +1246,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.7604766, y: 1, z: 1.7698994}
   m_Center: {x: 0, y: 0, z: -0.006999016}
---- !u!4 &1262813175 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 707245955863966095, guid: becf5bf0788073b43b6014f90f5da733,
-    type: 3}
-  m_PrefabInstance: {fileID: 1632276436}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1406943944
 GameObject:
   m_ObjectHideFlags: 0
@@ -1661,6 +1646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  hand: {fileID: 0}
 --- !u!114 &1984900463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1670,13 +1656,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1984900461}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0938bda5e7ddbb4e8b4d8c359f752ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 75f6adc004c4070448757f50c5feb493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  canHold: 1
-  ball: {fileID: 1186338583}
-  guide: {fileID: 1262813175}
+  guide: {fileID: 0}
 --- !u!54 &1984900464
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -716,7 +716,6 @@ MonoBehaviour:
   wire_2: {fileID: 871060143}
   door_1: {fileID: 1562804926}
   door_2: {fileID: 733372689}
-  guide: {fileID: 2057068269}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -942,7 +941,6 @@ MonoBehaviour:
   wire_2: {fileID: 0}
   door_1: {fileID: 1562804926}
   door_2: {fileID: 733372689}
-  guide: {fileID: 617177859}
 --- !u!65 &871060145
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1360,13 +1358,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1165978379}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0938bda5e7ddbb4e8b4d8c359f752ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 75f6adc004c4070448757f50c5feb493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  canHold: 1
-  wire: {fileID: 871060143}
-  guide: {fileID: 1262813175}
+  guide: {fileID: 0}
 --- !u!114 &1165978381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1520,12 +1515,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.461236, y: 1, z: 1.4705925}
   m_Center: {x: 0, y: 0, z: -0.006998062}
---- !u!4 &1262813175 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 707245955863966095, guid: becf5bf0788073b43b6014f90f5da733,
-    type: 3}
-  m_PrefabInstance: {fileID: 1632276436}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1406943944
 GameObject:
   m_ObjectHideFlags: 0
@@ -2029,6 +2018,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  hand: {fileID: 0}
 --- !u!114 &1984900463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2038,13 +2028,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1984900461}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0938bda5e7ddbb4e8b4d8c359f752ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 75f6adc004c4070448757f50c5feb493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  canHold: 1
-  wire: {fileID: 1186338583}
-  guide: {fileID: 1262813175}
+  guide: {fileID: 0}
 --- !u!54 &1984900464
 Rigidbody:
   m_ObjectHideFlags: 0
