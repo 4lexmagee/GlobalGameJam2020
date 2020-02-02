@@ -18,10 +18,14 @@ public class TopDownController : MonoBehaviour
     public bool movingDown;
     [HideInInspector]
      Vector2 targetVelocy;
+    Animator anims;
+    SpriteRenderer renderer;
     // Start is called before the first frame update
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        anims = GetComponent<Animator>();
+        renderer = GetComponent<SpriteRenderer>();
         targetVelocy = Vector3.zero;
     }
 
@@ -32,10 +36,94 @@ public class TopDownController : MonoBehaviour
         if (playerOne)
         {
             targetVelocy = new Vector3(Input.GetAxisRaw("HorizontalOne"), Input.GetAxisRaw("VerticalOne"));
+
+            if (Input.GetAxisRaw("VerticalOne") > 0)
+            {
+                anims.SetBool("Up", true);
+                
+            }
+            else
+            {
+                anims.SetBool("Up", false);
+            }
+
+            if (Input.GetAxisRaw("VerticalOne") < 0)
+            {
+                anims.SetBool("Down", true);
+
+            }
+            else
+            {
+                anims.SetBool("Down", false);
+            }
+
+            if (Input.GetAxisRaw("HorizontalOne") > 0)
+            {
+                renderer.flipX = false;
+            }
+            else
+            {
+                renderer.flipX = true;
+            }
+
+            if(Input.GetAxisRaw("HorizontalOne")!=0)
+            {
+                anims.SetBool("Horizontal",true);
+                anims.SetBool("Up", false);
+                anims.SetBool("Down", false);
+            }
+            else
+            {
+                anims.SetBool("Horizontal", false);
+                
+            }
+
+            
         }
         else
         {
             targetVelocy = new Vector3(Input.GetAxisRaw("HorizontalTwo"), Input.GetAxisRaw("VerticalTwo"));
+
+            if (Input.GetAxisRaw("VerticalTwo") > 0)
+            {
+                anims.SetBool("Up", true);
+
+            }
+            else
+            {
+                anims.SetBool("Up", false);
+            }
+
+            if (Input.GetAxisRaw("VerticalTwo") < 0)
+            {
+                anims.SetBool("Down", true);
+
+            }
+            else
+            {
+                anims.SetBool("Down", false);
+            }
+
+            if (Input.GetAxisRaw("HorizontalTwo") > 0)
+            {
+                renderer.flipX = false;
+            }
+            else
+            {
+                renderer.flipX = true;
+            }
+
+            if (Input.GetAxisRaw("HorizontalTwo") != 0)
+            {
+                anims.SetBool("Horizontal", true);
+                anims.SetBool("Up", false);
+                anims.SetBool("Down", false);
+            }
+            else
+            {
+                anims.SetBool("Horizontal", false);
+
+            }
         }
         targetVelocy *= speed * Time.deltaTime;
         if (targetVelocy.x != 0 && targetVelocy.y != 0)
