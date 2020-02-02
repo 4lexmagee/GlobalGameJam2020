@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Doors_Open.unity
+- path: Assets/Scenes/Obstacles_Layout.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
